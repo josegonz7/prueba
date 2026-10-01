@@ -52,6 +52,8 @@ function examen() {
 
     let acum = 0;
     let operaciones = 0;
+    let max;
+    let min;
 
     //bucle
     while (window.confirm("deseas continuar?")) {
@@ -63,7 +65,7 @@ function examen() {
         let descuento;
 
         if (importe < 50) {
-            descuento =  0;
+            descuento = 0;
         } else if (importe > 50 && importe <= 99.99) {
             descuento = importe * 0.05;
         } else if (importe > 99.99 && importe <= 199.99) {
@@ -84,9 +86,16 @@ function examen() {
 
         acum += total;
         operaciones++;
+        max = total;
+        min = total;
     }
     console.log("Precio total de la compra: " + acum);
     console.log("numero de operaciones: " + operaciones);
+    if (max > min) {
+            console.log("el precio mayor es: " + max);
+        } else {
+            console.log("el menor menor es: " + min);
+        }
 }
 
 examen();
